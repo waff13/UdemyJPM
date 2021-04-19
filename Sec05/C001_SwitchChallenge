@@ -1,0 +1,31 @@
+class SwitchChallenge {
+    public static void main(String[] args) {
+        char switchValue = 'Z';
+        
+        switch (switchValue) {
+            case 'A':
+                System.out.println("It is A");
+                break;
+                
+            case 'B':
+                System.out.println("It is B");
+                break;
+                
+            case 'C':
+                System.out.println("It is C");
+                break;
+                
+            case 'D':
+                System.out.println("It is D");
+                break;
+                
+            case 'E':
+                System.out.println("It is E");
+                break;
+                
+            default:
+                System.out.println("It is not A, B, C, D or E");
+                break;
+        }
+    }
+}
