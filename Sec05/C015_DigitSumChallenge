@@ -1,0 +1,17 @@
+public class DigitSumChallenge {
+
+    public static int sumDigits (int number) {
+        if (number < 11) {
+            return -1;
+        }
+        int sum = 0;
+        int last = 0;
+
+        while (number >= 1) {
+            last = (number % 10);
+            sum += last;
+            number = (number / 10);
+        }
+        return sum;
+    }
+}
