@@ -5,11 +5,11 @@ public class FirstLastDigitSum {
             return -1;
         }
         int last = number % 10;
-        if ((number / 10) < 1) {
+/*        if ((number / 10) < 1) {
             last += last;
             return last;
         }
-        while (number >= 10) {
+*/        while (number > 9) {
             number = number / 10;
         }
         return number + last;
