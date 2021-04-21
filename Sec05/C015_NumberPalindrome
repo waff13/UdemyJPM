@@ -1,0 +1,30 @@
+public class NumberPalindrome {
+
+    public static boolean isPalindrome (int number) {
+        int lastDigit;
+        int reversedNumber = 0;
+        if (number < 0) {
+            number *= -1;
+        }
+        int originalNumber = number;
+        int safetyCounter = 0;
+
+        while (number >0) {
+            lastDigit = number % 10;
+//            System.out.println("lastDigit: " + lastDigit);
+            reversedNumber += lastDigit;
+//            System.out.println("reversedNumber: " + reversedNumber);
+            number = number / 10;
+//            System.out.println("number divided by 10: " + number);
+            if (number > 0) {
+                reversedNumber *= 10;
+            }
+            safetyCounter++;
+            if (safetyCounter == 7) {
+                System.out.println("Safety stop!");
+                break;
+            }
+        }
+        return (originalNumber == reversedNumber);
+    }
+}
