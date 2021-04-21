@@ -1,0 +1,13 @@
+public class SharedDigit {
+
+    public static boolean hasSharedDigit (int one, int two) {
+        if ( ((one < 10) || (one > 99)) || ((two < 10) || (two > 99))) {
+            return false;
+        }
+        int oneLast = (one % 10);
+        int oneFirst = (one / 10);
+        int twoLast = (two % 10);
+        int twoFirst = (two / 10);
+        return ((oneLast == twoLast) || (oneLast == twoFirst) || (oneFirst == twoFirst) || (oneFirst == twoLast));
+    }
+}
