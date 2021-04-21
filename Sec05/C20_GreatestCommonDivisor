@@ -7,7 +7,7 @@ public class GreatestCommonDivisor {
         int lesserNumber = ((first > second) ? second:first);
         int possibleDivisor = 1;
         int greatestCommonDivisor = 1;
-        while (possibleDivisor < ((lesserNumber / 2) + 1)) {
+        while (possibleDivisor <= lesserNumber) {
             if ( ((first % possibleDivisor) == 0) && (second % possibleDivisor == 0)) {
                 greatestCommonDivisor = possibleDivisor;
             }
