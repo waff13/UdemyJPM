@@ -42,6 +42,7 @@ public class NumberToWords {
                     break;
                 case 9:
                     System.out.println("Nine");
+                    break;
                 default:
                     System.out.println("Whoa!");
                     break;
