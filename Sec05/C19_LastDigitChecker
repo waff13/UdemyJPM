@@ -1,11 +1,17 @@
 public class LastDigitChecker {
 
     public static boolean hasSameLastDigit (int one, int two, int three) {
-        if ( ((one < 10) || (one > 1000)) ||
-                ((two < 10) || (two > 1000)) ||
-                ((three < 10) || (three > 1000)) ) {
+//        if ( ((one < 10) || (one > 1000)) ||
+//                ((two < 10) || (two > 1000)) ||
+//                ((three < 10) || (three > 1000)) ) {
+//            return false;
+        if ((!isValid(one)) || (!isValid(two)) || (!isValid(three))) {
             return false;
         }
         return ((one % 10) == (two % 10)) || ((one % 10) == (three % 10)) || ((two % 10) == (three % 10));
+    }
+
+    public static boolean isValid(int number) {
+        return ((number > 9) && (number <= 1000));
     }
 }
