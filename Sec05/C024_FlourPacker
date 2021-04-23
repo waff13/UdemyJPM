@@ -25,4 +25,16 @@ public class FlourPacker {
         }
         return (goal == 0);
     }
+
+    public static boolean canPackTwo (int bigCount, int smallCount, int goal) {
+        if ( (bigCount < 0) || (smallCount < 0) || (goal < 0) ) {
+            return false;
+        }
+
+        if ( ((bigCount * 5) + smallCount) < goal ) { // supply must be greater than demand
+            return false;
+        }
+        return ((goal % 5) <= smallCount); // regardless of bigCount, remainder of goal has to be less than smallCount
+    }
 }
+
