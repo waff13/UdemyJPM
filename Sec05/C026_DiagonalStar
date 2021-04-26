@@ -1,0 +1,37 @@
+public class DiagonalStar {
+
+    public static void printSquareStar(int number) {
+        if (number < 5) {
+            System.out.println("Invalid Value");
+        } else {
+            int rowCount = 0;
+            for (int row = 0; row < number; row++) {
+                System.out.print("*");
+                rowCount++;
+                for (int column = 1; column < (number - 1); column++) {
+                    if ((row == 0) || (row == (number - 1))) {
+                        System.out.print("*");
+                    } else if (row == column) {
+                        System.out.print("*");
+                    }
+
+                    // when the column number equals rowCount - currentRow + 1 (currentRow == current row number)
+                    // in my terms: _column_  equals rowCount - _row + 1_
+                    // for 5: 2nd row, 4th position AND 4th row, 2nd position
+                    // for 8: 2nd row, 7th position AND 3rd row, 6 position AND 4th row 5th position AND
+                    // 6th row 3rd position AND 7th row, 2nd position
+                    // row (0 + 1), column (5 - 1) [] row (5 - 1), column (5 - 4)
+                    // column(4) == number(5) - row (1)
+                    
+                    else if (column == (number - (row + 1))) {
+                        System.out.print("*");
+                    } else {
+                        System.out.print(" ");
+                    }
+                }
+                System.out.print("*");
+                System.out.println();
+            }
+        }
+    }
+}
