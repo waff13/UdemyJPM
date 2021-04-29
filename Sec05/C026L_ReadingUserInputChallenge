@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class ReadingUserInputChallenge {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int counter = 1;
+        int currentNumber = 0;
+        int sum = 0;
+        while (counter < 11) {
+            System.out.println("Enter number #" + counter + ":");
+            boolean hasNextInt = scanner.hasNextInt();
+            if (hasNextInt) {
+                currentNumber = scanner.nextInt();
+                scanner.nextLine(); // handle the end of the line (enter key)
+                sum += currentNumber;
+                counter++;
+            } else {
+                scanner.nextLine();
+                System.out.println("Invalid Input");
+                continue;
+            }
+        }
+        System.out.println("Sum is " + sum);
+        scanner.close();
+    }
+}
