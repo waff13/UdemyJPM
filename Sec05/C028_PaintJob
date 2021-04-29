@@ -1,0 +1,25 @@
+public class PaintJob {
+
+    public static int getBucketCount(double width, double height, double areaPerBucket, int extraBuckets) {
+        if ( (width <= 0.0) || (height <=0) || (areaPerBucket <= 0) || (extraBuckets < 0) ) {
+            return -1;
+        }
+        double area = width * height;
+        double addOneBucket = area / areaPerBucket;
+        int buckets = (int) Math.round(area / areaPerBucket);
+        if (addOneBucket > (double) buckets) {
+            buckets++;
+        }
+        //System.out.println("Buckets needed = " + buckets);
+        return (buckets - extraBuckets);
+    }
+
+    public static int getBucketCount(double width, double height, double areaPerBucket) {
+        return getBucketCount(width, height, areaPerBucket, 0);
+    }
+
+    public static int getBucketCount(double area, double areaPerBucket) {
+        return getBucketCount(area, 1.0, areaPerBucket, 0);
+
+    }
+}
