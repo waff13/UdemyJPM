@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class InputCalculator {
+
+    public static void inputThenPrintSumAndAverage() {
+        int sum = 0;
+        int average = 0;
+        int counter = 0;
+        int userInput;
+        Scanner scanner = new Scanner (System.in);
+        while (true) {
+            //System.out.println("Please enter your number:");
+            boolean isNextInt = scanner.hasNextInt();
+            if (isNextInt) {
+                userInput = scanner.nextInt();
+                sum = sum + userInput;
+                counter++;
+                //System.out.println("Sum = " + sum + " counter = " + counter);
+            } else {
+                if (counter == 0) {
+                    average = 0;
+                } else {
+                    average = (int) Math.round ((double)sum / (double)counter);
+                    //System.out.println("1st average = " + average);
+                    //average = (int) (double) Math.round((average * 100.0) / 100.0);
+                    //System.out.println("2nd average = " + average);
+                }
+                System.out.println("SUM = " + sum + " AVG = " + average);
+                break;
+            }
+            scanner.nextLine();
+        }
+    }
+}
