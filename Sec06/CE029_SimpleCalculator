@@ -1,0 +1,51 @@
+public class SimpleCalculator {
+
+    private double firstNumber;
+    private double secondNumber;
+
+    public void setFirstNumber(double firstNumber){
+        this.firstNumber = firstNumber;
+    }
+
+    public double getFirstNumber(){
+        return firstNumber;
+    }
+
+    public void setSecondNumber(double secondNumber) {
+        this.secondNumber = secondNumber;
+    }
+
+    public double getSecondNumber() {
+        return secondNumber;
+    }
+
+    public double getAdditionResult(){
+        return (firstNumber + secondNumber);
+    }
+
+    public double getSubtractionResult(){
+        return (firstNumber - secondNumber);
+    }
+
+    public double getMultiplicationResult(){
+        return (firstNumber * secondNumber);
+    }
+
+    public double getDivisionResult(){
+        if (secondNumber == 0) {
+            return 0;
+        } else {
+            return (firstNumber / secondNumber);
+        }
+    }
+
+    public static void main(String[] args) {
+        SimpleCalculator calc = new SimpleCalculator();
+        calc.setFirstNumber(9.0);
+        calc.setSecondNumber(3.0);
+        System.out.println("9 + 3 = " + calc.getAdditionResult());
+        System.out.println("9 - 3 = " + calc.getSubtractionResult());
+        System.out.println("9 * 3 = " + calc.getMultiplicationResult());
+        System.out.println("9 : 3 = " + calc.getDivisionResult());
+    }
+}
