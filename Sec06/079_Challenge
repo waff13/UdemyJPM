@@ -1,0 +1,81 @@
+public class BankAccount {
+
+    private long accountNumber;
+    private double balance = 0.0;
+    private String name;
+    private String email;
+    private String phoneNumber;
+
+    public void setAccountNumber(long accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public long getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void DepositFunds(double deposit) {
+        if (deposit <= 0.0) {
+            balance += 0;
+            System.out.println("The amount is negative or zero!");
+        } else {
+            balance += deposit;
+        }
+    }
+
+    public void WithdrawFunds(double withdraw) {
+        if (withdraw > balance) {
+            System.out.println("The amount to withdraw is bigger than the balance!");
+        } else {
+            balance -= withdraw;
+        }
+    }
+
+    public static void main(String[] args) {
+        BankAccount account1 = new BankAccount();
+        BankAccount account2 = new BankAccount();
+        System.out.println("(acc1) Balance before deposit: " + account1.getBalance());
+        account1.DepositFunds(225);
+        System.out.println("(acc1) Balance after deposit: " + account1.getBalance());
+        System.out.println("(acc2) Balance before deposit: : " + account2.getBalance());
+        account2.DepositFunds(-156);
+        System.out.println("(acc2) Balance after deposit: " + account2.getBalance());
+        account1.WithdrawFunds(25);
+        System.out.println("(acc1) Balance after withdraw: " + account1.getBalance());
+        account2.WithdrawFunds(1);
+        System.out.println("(acc2) Balance after withdraw: " + account2.getBalance());
+
+    }
+}
