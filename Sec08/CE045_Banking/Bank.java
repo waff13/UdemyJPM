@@ -12,7 +12,7 @@ public class Bank {
         this.branches = new ArrayList<Branch>();
     }
 
-    public Branch findBranch (String name) {
+    private Branch findBranch (String name) {
         // Return the branch if it exists or null otherwise
         for (int i = 0; i < branches.size(); i++) {
             Branch beingChecked = this.branches.get(i);
@@ -27,7 +27,7 @@ public class Bank {
         // Return true if the branch was added or false otherwise
         Branch existingBranch = findBranch(name);
         if (existingBranch == null) {
-            this.branches.add(new Branch(name));
+            return this.branches.add(new Branch(name));
         }
         return false;
     }
