@@ -9,7 +9,7 @@ public class Branch {
 
     public Branch (String name) {
         this.name = name;
-        this.customers = new ArrayList<Customer>();
+        this.customers = new ArrayList<>();
     }
 
     public String getName() {
@@ -20,7 +20,7 @@ public class Branch {
         return customers;
     }
 
-    public Customer findCustomer (String name) {
+    private Customer findCustomer (String name) {
         // Returns Customer if it exists or null if it does not
         for (int i = 0; i < customers.size(); i++) {
             Customer beingChecked = this.customers.get(i);
