@@ -61,7 +61,7 @@ public class Bank {
                 Customer branchCustomer = branchCustomers.get(i);
                 System.out.println("Customer: " + branchCustomer.getName() + "[" + (i+1) + "]");
                 if (printTransactions) {
-                    System.out.println("Transactions:");
+                    System.out.println("Transactions");
                     ArrayList<Double> transactions = branchCustomer.getTransactions();
                     for (int j = 0; j < transactions.size(); j++) {
                         System.out.println("[" + (j+1) + "]  Amount " + transactions.get(j));
