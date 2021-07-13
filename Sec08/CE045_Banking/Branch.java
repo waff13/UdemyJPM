@@ -35,7 +35,7 @@ public class Branch {
         // Returns true if customer was added or false if it did not
         Customer existingCustomer = findCustomer(name);
         if (existingCustomer == null) {
-            customers.add(new Customer(name, initialAmount));
+            return customers.add(new Customer(name, initialAmount));
         }
         return false;
     }
