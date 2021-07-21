@@ -28,16 +28,16 @@ public class Main {
         album.addSong("Holy Man", 4.3);
         albums.add(album);
 
-        System.out.println("Album title: " + album.getAlbumTitle());
+        //System.out.println("Album title: " + album.getAlbumTitle());
 
         LinkedList<Song> playlist = new LinkedList<Song>();
-        albums.get(0).addToPlaylist("You can't do it right", playlist);
-        albums.get(0).addToPlaylist("Holy Man", playlist);
-        albums.get(0).addToPlaylist("Speed king", playlist); // Does not exist
-        albums.get(0).addToPlaylist("You can't do it right", playlist); // duplicated entry, fine for now
-        albums.get(0).addToPlaylist(9, playlist);
-        albums.get(0).addToPlaylist(3, playlist);
-        albums.get(0).addToPlaylist(2, playlist);
-        albums.get(0).addToPlaylist(24, playlist); // There is no track 24
+        albums.get(0).addToPlayList("You can't do it right", playlist);
+        albums.get(0).addToPlayList("Holy Man", playlist);
+        albums.get(0).addToPlayList("Speed king", playlist); // Does not exist
+        albums.get(0).addToPlayList("You can't do it right", playlist); // duplicated entry, fine for now
+        albums.get(0).addToPlayList(9, playlist);
+        albums.get(0).addToPlayList(3, playlist);
+        albums.get(0).addToPlayList(2, playlist);
+        albums.get(0).addToPlayList(24, playlist); // There is no track 24
     }
 }
