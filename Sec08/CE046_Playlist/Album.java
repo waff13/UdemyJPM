@@ -15,9 +15,9 @@ public class Album {
         this.songs = new ArrayList<Song>();
     }
 
-    public String getAlbumTitle () {
+    /**public String getAlbumTitle () {
         return name;
-    }
+    }*/
 
     private Song findSong (String songTitle) {
         // Returns the Song if it exists or null otherwise
@@ -38,25 +38,25 @@ public class Album {
         // Returns true if the song was added or false otherwise
         if (findSong(songTitle) == null) {
             this.songs.add(new Song(songTitle, duration));
-            System.out.println("Song " + songTitle + " with duration " + duration + " added to the album " + this.getAlbumTitle());
+            //System.out.println("Song " + songTitle + " with duration " + duration + " added to the album " + this.getAlbumTitle());
             return true;
         }
         System.out.println("Looks like this song already exists in this album!");
         return false;
     }
 
-    public boolean addToPlaylist (int trackNumber, LinkedList<Song> playlist) {
+    public boolean addToPlayList(int trackNumber, LinkedList<Song> playlist) {
         // Returns true if the song exists and was added to the list or false otherwise
-        if ((trackNumber - 1) <= songs.size()) {
-            String songTitle = this.songs.get((trackNumber - 1)).getTitle();
-            if (addToPlaylist(songTitle, playlist)) {
-                return true;
-            };
+        int index = (trackNumber - 1);
+        if ((index < 0) || (index >= songs.size())) {
+            return false;
         }
-        return false;
+        String songTitle = this.songs.get(index).getTitle();
+        addToPlayList(songTitle, playlist);
+        return true;
     }
 
-    public boolean addToPlaylist (String songTitle, LinkedList<Song> playlist) {
+    public boolean addToPlayList(String songTitle, LinkedList<Song> playlist) {
         // Returns true if the song exists and was added to the list or false otherwise
         if (findSong(songTitle) != null) {
             playlist.add(findSong(songTitle));
