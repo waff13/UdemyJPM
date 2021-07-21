@@ -1,3 +1,5 @@
+package CE046_Playlist;
+
 public class Song {
 
     private String title;
